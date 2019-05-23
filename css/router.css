@@ -1,0 +1,21 @@
+*{
+	margin: 1px;
+}
+
+.center{
+	text-align: center;
+}
+.cor{
+	border: 1px solid red;
+	width: 300px;
+	height: 200px;
+	margin: 10px;
+	text-align: center;	
+}
+.form{
+	border: 1px solid black;
+	margin: 10px;
+	border-radius: 10px;
+	padding: 10px;
+	
+}

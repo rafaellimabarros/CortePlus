@@ -1,82 +1,101 @@
 <?php 
-
-class Cliente{
-	//variaveis
-	protected $nome;
+include_once '../model/crud.php';
+class Cliente extends Crud{
+	protected $table = 'cliente';
+	private $nome;
 	private $cpf;
-	private $dataNascimento;
+	private $data;
 	private $contato;
 	private $bairro;
 	private $cidade;
-	private $senha;
 	private $email;
+	private $senha;
 
-	//Construct
-	function __construct($nomes,$cpf,$dataNascimento,$contato,
-		$bairro,$cidade,$senha,$email)
-	{
-		$this->nome = $nomes;
-		$this->cpf = $cpf;
-		$this->dataNascimento = $dataNascimento;
-		$this->contato = $contato;
-		$this->bairro = $bairro;
-		$this->cidade = $cidade;
-		$this->email = $email;	
-		$this->senha = $senha;
+
+	//metodos
+	public function insert(){
+		$sql = "INSERT INTO $this->table(nome,cpf,data,contato,bairro,cidade,email,senha)VALUES(:nome,:cpf,:data,:contato,:bairro,:cidade,:email,:senha)";
+		$stmt = Conexao::prepare($sql);
+		$stmt->bindParam(':nome',$this->nome);
+		$stmt->bindParam(':cpf',$this->cpf);
+		$stmt->bindParam(':data',$this->data);
+		$stmt->bindParam(':contato',$this->contato);
+		$stmt->bindParam(':bairro',$this->bairro);
+		$stmt->bindParam(':cidade',$this->cidade);
+		$stmt->bindParam(':email',$this->email);
+		$stmt->bindParam(':senha',$this->senha);
+		return $stmt->execute();
+	}
+
+	public function update($id){
+		$sql = "UPDATE $this->table SET nome = :nome,cpf = :cpf, data =:data , contato = :contato,bairro = :bairro,cidade = :cidade , email =:email , senha =:senha WHERE id =:id";
+		$stmt = Conexao::prepare($sql);
+		$stmt->bindParam(':id',$id);
+		$stmt->bindParam(':nome',$this->nome);
+		$stmt->bindParam(':cpf',$this->cpf);
+		$stmt->bindParam(':data',$this->data);
+		$stmt->bindParam(':contato',$this->contato);
+		$stmt->bindParam(':bairro',$this->bairro);
+		$stmt->bindParam(':cidade',$this->cidade);
+		$stmt->bindParam(':email',$this->email);
+		$stmt->bindParam(':senha',$this->senha);
+		return $stmt->execute();
 		
 	}
 
 
 	//gets e sets
-	public function setNome($novoNome){
+	 function setNome($novoNome){
 		$this->nome = $novoNome;
 	}
-	public function getNome(){
+	function getNome(){
 		return $this->nome;
 	}
-	public function setCpf($cpf){
+	 function setCpf($cpf){
 		$this->cpf = $cpf;
 	}
-	public function getCpf(){
+	 function getCpf(){
 		return $this->cpf;
 	}
-	public function setDataNascimento($DataNascimento){
+	 function setData($DataNascimento){
 		$this->dataNascimento = $DataNascimento;
 	}
-	public function getDataNascimento(){
+	function getData(){
 		return $this->dataNascimento;
 	}
-	public function setContato($Contato){
+	function setContato($Contato){
 		$this->Contato = $Contato;
 	}
-	public function getContato(){
+	function getContato(){
 		return $this->contato;
 	}
-	public function setBairro($bairro){
+	function setBairro($bairro){
 		$this->bairro = $bairro;
 	}
-	public function getBairro(){
+	function getBairro(){
 		return $this->bairro;
 	}
-	public function setCidade($cidade){
+	function setCidade($cidade){
 		$this->cidade = $cidade;
 	}
-	public function getCidade(){
+	function getCidade(){
 		return $this->cidade;
 	}
-	public function setEmail($email){
+	function setEmail($email){
 		$this->email = $email;
 	}
-	public function getEmail(){
+	function getEmail(){
 		return $this->email;
 	}
-	public function setSenha($senha){
+	function setSenha($senha){
 		$this->senha = $senha;
 	}
-	public function getSenha(){
+	function getSenha(){
 		return $this->senha;
 	}
 	
 }
+
+
 
 ?>

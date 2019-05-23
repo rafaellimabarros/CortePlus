@@ -1,0 +1,65 @@
+*{
+	margin: 1px;
+	
+}
+#box{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top: -200px;
+	margin-left: -350px;
+
+}
+.banner{
+	
+	border: 0.5px solid black;
+	border-radius: 10px;
+	width: 700px;
+	height: 400px;
+	padding-top: 50px;
+	padding-left: 160px;
+	background: rgba(255,255,255,0.3);
+
+}
+body{
+	background-image: url("../img/login.png");
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width:769px) {
+	/*Apaga a Logo do Site */
+	.home{
+		display: none;
+	}
+	#icon1{
+		border-radius: 5px;
+	}
+	#box{
+		margin-left: -200px;
+	}
+	.banner{
+	
+	border: 0.5px solid black;
+	border-radius: 10px;
+	width: 400px;
+	height: 400px;
+	padding-top: 50px;
+	padding-left: 70px;
+	background: rgba(255,255,255,0.3);
+
+}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:769px) {
+	.pull{
+		margin-left: 100px;
+	 }
+	 
+	}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }

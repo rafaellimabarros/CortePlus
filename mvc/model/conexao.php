@@ -1,23 +1,23 @@
 <?php
+	require 'config.php';
+	class Conexao{
+		private static $instance;
 
-	class salaoPlus{
-	public function conectar()
-	{
-		global $pdo;
-		try {
-			$dbname = "localhost";
-			$servidor = "salaoplus";
-			$usuario = "root";
-			$senha = "vertrigo";
-
-			$pdo = new PDO("mysql:dbname=".$dbname.";servidor=".$servidor, $usuario, $senha);
-            echo "Conectado";
-		} catch (Exception $e) {
-			$e->getMessage();
+		public static function getInstance()
+		{
+			if(!isset(self::$instance)){
+				try{
+					self::$instance = new PDO('mysql:servidor=' . servidor . ';dbname=' . dbname,usuario,senha);
+					echo "Deu certo";
+				}catch(PDOException $e){
+					echo $e->getMessage();
+				}
+			}
+			return self::$instance;
 		}
+		public static function prepare($sql){
+			return self::getInstance()->prepare($sql);
+		}
+		
 	}
-	}
-
-
-
 ?>

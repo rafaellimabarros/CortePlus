@@ -1,0 +1,65 @@
+*{
+	text-align:center;
+	margin: 0;
+}
+body{
+	
+	background: url("../img/index.jpg");
+}
+#principal{
+	margin-top: 100px;
+	border: 1px solid black;
+	border-radius: 15px;
+	padding: 50px;
+	padding-top: 150px;
+	background: rgba(255,255,255,0.2);
+	height: 500px;
+}
+.btn{
+	margin-top: 5px;
+	border:1px solid black;
+}
+
+@media (max-width:769px) {
+	/*Apaga a Logo do Site */
+	.home{
+		display: none;
+	}
+	#icon1{
+		border-radius: 5px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:900px) {
+	#principal{
+		margin-top: 2px;
+		margin-left:50%;
+		padding-top: 250px;
+		border: 1px solid white;
+		border-radius: 10px;
+		background: rgba(255,255,255,0.2);
+		width: auto;
+		height: 770px;
+
+}
+	.btn{
+		margin-right: 10px;
+		border: 1px solid white;
+	}	
+
+	}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+	#principal{
+		margin-right: 100px;
+		
+	}
+	.claro:hover{
+		border: 1px solid black;
+	}
+	.preto:hover{
+		border: 1px solid white;
+	}
+}

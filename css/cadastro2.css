@@ -1,0 +1,39 @@
+*{
+	margin: 1px;
+	
+}
+.box{
+	margin-top: 125px;
+	padding: 20px;
+	
+}
+.btn{
+	margin-top: -10px;
+}
+body{
+	background-image: url("../img/index.jpg");
+}
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 769px) {
+	
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:769px) { 	
+	.box{
+	margin-top: 100px;
+	padding: 150px 500px; 
+	
+	
+}		
+
+
+ }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }

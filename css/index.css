@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	
+}
+/*caixa transparente*/
+#box{
+	position: absolute;
+	left: 56%;
+	
+
+}
+.banner{
+
+	border: 1px solid white;
+	padding: 150px;
+	background:rgba(255,255,255,0.5);
+	height: 100%;
+
+}
+.text-center{
+	margin-top: 0px;
+}
+
+body{
+	background: url("../img/index.jpg");
+}
+
+a:hover{
+	text-decoration: none;
+
+
+}a:link{
+	text-decoration: none;
+
+}
+.center{
+	
+}
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width:769px) {
+	/*Apaga a Logo do Site */
+	.home{
+		display: none;
+	}
+	#icon1{
+		border-radius: 5px;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:769px) {
+	.pull{
+		margin-left: 100px;
+	 }
+	}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) { ... }
