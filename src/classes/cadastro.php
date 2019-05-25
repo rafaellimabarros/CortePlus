@@ -10,10 +10,12 @@ include ('conexao.php');
     $senha = md5($_POST["senha"]);
 
 	
-		try {
-			$stmt = $pdo->prepare('INSERT INTO cliente(nome,cpf,dataNascimento,bairro,cidade,contato,email,senha) VALUES (:nome,:cpf,:data,:bairro,:cidade,:contato,:email,:senha) ' );
+		
+			$sql = 'INSERT INTO cliente(nome,cpf,dataNascimento,bairro,cidade,contato,email,senha)VALUES(:nome,:cpf,:data,:bairro,:cidade,:contato,:email,:senha)';
 
-			$stmt->bindValue(":nome",$nome);
+			$stmt = $pdo->prepare($sql);
+
+			$stmt->bindValue(':nome',$nome);
 			$stmt->bindValue(':cpf',$cpf);
 			$stmt->bindValue(':data',$data);
 			$stmt->bindValue(':bairro',$bairro);
@@ -21,16 +23,14 @@ include ('conexao.php');
 			$stmt->bindValue(':contato',$contato);
 			$stmt->bindValue(':email',$email);
 			$stmt->bindValue(':senha',$senha);
-		$stmt->execute();
-		$data = $stmt->fetch();
-			print_r($data);
+			$stmt->execute();
+		
+
+		
 		echo $stmt->rowCount();	
 			//header('location:index.php');
 			
 		
 	
-		} catch (Exception $e) {
-			echo $e->getMessage();		
-		}
 
 ?>
