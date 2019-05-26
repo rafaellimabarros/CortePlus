@@ -1,5 +1,5 @@
 <?php 
-include ('conexao.php');
+require ('conexao.php');
 	 $nome = $_POST["nome"];
 	 $cpf = $_POST["cpf"];
 	 $data = $_POST["data"];
@@ -11,7 +11,7 @@ include ('conexao.php');
 
 	
 		
-			$sql = 'INSERT INTO cliente(nome,cpf,dataNascimento,bairro,cidade,contato,email,senha)VALUES(:nome,:cpf,:data,:bairro,:cidade,:contato,:email,:senha)';
+			$sql = 'INSERT INTO cliente(nome,dataNascimento,contato,cpf,bairro,cidade,email,senha)VALUES(:nome,:data,:contato,:cpf,:bairro,:cidade,:email,:senha)';
 
 			$stmt = $pdo->prepare($sql);
 
@@ -23,12 +23,11 @@ include ('conexao.php');
 			$stmt->bindValue(':contato',$contato);
 			$stmt->bindValue(':email',$email);
 			$stmt->bindValue(':senha',$senha);
+
 			$stmt->execute();
 		
-
-		
 		echo $stmt->rowCount();	
-			//header('location:index.php');
+			header('location:pages/cliente/homeCliente.php');
 			
 		
 	

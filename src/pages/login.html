@@ -52,7 +52,12 @@
 							Login
 						</button>
 					</div>
-
+					<?php 
+							if(isset($_SESSION['LoginErro'])){
+							echo $_SESSION['LoginErro'];
+							unset($_SESSION['LoginErro']);
+							}
+						?>
 				</form>
 			</div>
 		</div>
