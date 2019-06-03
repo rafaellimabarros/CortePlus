@@ -8,7 +8,7 @@
 			window.location.href = "../pages/cliente/homeCliente.php";
 		}
 		function msgError(){
-			alert("Falha ao altenticar!");
+			alert("Falha ao autenticar! "+ "Verifique usuario e senha");
 			window.location.href = "../pages/login.html";
 		}
 
@@ -23,7 +23,7 @@
 include ('conexao.php');
 
  	$email = $_POST['email'];
-    $senha = md5($_POST['senha']);
+    $senha = $_POST['senha'];
 
     $sql = $pdo->prepare('SELECT * FROM cliente WHERE email = :email && senha = :senha');
 
@@ -36,9 +36,7 @@ include ('conexao.php');
 		$_SESSION['email'] = $email;
 		$_SESSION['senha'] = $senha;
 		echo "<script>msgOk()</script>";
-		//header('location:../pages/cliente/homeCliente.php');	
 	}else{
-		//header('location:../pages/login.html');
 		echo "<script>msgError()</script>";
 	}	
 

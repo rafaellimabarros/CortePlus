@@ -1,5 +1,20 @@
+<?php
+    require '../../classes/conexao.php';   
+  session_start();
+  if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
+{
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  header('location:../login.html');
+  }
+ 
+$logado = $_SESSION['email'];
+
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
 
@@ -11,15 +26,12 @@
   <title>Salões Plus</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
-
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -30,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="../Salao%20Plus/index.php">Home
+            <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -38,26 +50,37 @@
             <a class="nav-link" href="#">Sobre Nós</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Salões</a>
+            <a class="nav-link" href="#">Serviços</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../Salao%20Plus/src/pages/routerCadastro.html">Cadastro</a>
+            <a class="nav-link" href="#">Agendamentos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../Salao%20Plus/src/pages/routerLogin.html">Login</a>
+            <a class="nav-link" href="#">
+             <?php 
+                echo "Bem Vindo $logado"
+              ?></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../classes/sair.php">sair</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
+  <?php
+      $stmt = $pdo->query("SELECT * FROM salao");
+    while ($row = $stmt->fetch()) {
+    echo $row['name']."<br />\n";
+}
+  ?>
   <!-- Header -->
-  <header class="bg-dange py-5 mb-5">
+  <header class="bg-primary py-5 mb-5">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
           <h1 class="display-4 text-white mt-5 mb-2">Salão Plus</h1>
-          <p class="lead mb-5 text-white-50">Melhor site de todos</p>
+          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
         </div>
       </div>
     </div>
@@ -65,8 +88,49 @@
 
   <!-- Page Content -->
   <div class="container">
-
     <div class="row">
+
+    </div>
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Salão 1</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Agendamento!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Salão 2</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Agendamento!</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+          <div class="card-body">
+            <h4 class="card-title">Salão 3</h4>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Agendamento!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+ <div class="row">
       <div class="col-md-8 mb-5">
         <h2>What We Do</h2>
         <hr>
@@ -93,47 +157,6 @@
       </div>
     </div>
     <!-- /.row -->
-
-    <div class="row">
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/lequipe.png" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Salão 1</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Agendamento!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/beleza.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Salão 2</h4>
-            <p class="card-text">Salão da loira!</p>
-          </div>
-          <div class="card-footer">
-            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary">Agendamento!</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-5">
-        <div class="card h-100">
-          <img class="card-img-top" src="img/daqua.jpg" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Salão 3</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Agendamento!</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-
   </div>
   <!-- /.container -->
 

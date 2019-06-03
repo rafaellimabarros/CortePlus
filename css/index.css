@@ -9,22 +9,20 @@
 	
 
 }
-.banner{
-
-	border: 1px solid white;
-	padding: 150px;
-	background:rgba(255,255,255,0.5);
-	height: 100%;
+header{
+	background: url("../img/back.jpg");
+	width: 100%;
+	height: auto;
 
 }
 .text-center{
 	margin-top: 0px;
 }
 
-body{
+/*body{
 	background: url("../img/index.jpg");
 }
-
+*/
 a:hover{
 	text-decoration: none;
 

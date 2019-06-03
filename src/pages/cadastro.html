@@ -37,16 +37,20 @@
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5" action="../classes/cadastro.php" method="post">
 
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="nome" placeholder="User name">
+					<div class="wrap-input100 validate-input" data-validate = "Nome">
+						<input class="input100" type="text" name="nome" placeholder="Nome">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "Enter CPF">
+					<div class="wrap-input100 validate-input" data-validate = "CPF">
 						<input class="input100" type="number" name="cpf" placeholder="CPF">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate = "data de Nascimento">
+					<div class="wrap-input100 validate-input" data-validate = "Data de Nascimento">
 						<input class="input100" type="date" name="data" placeholder="Data de Nascimento">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "endereco">
+						<input class="input100" type="text" name="endereco" placeholder="endereco">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "bairro">
@@ -58,7 +62,8 @@
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "contato">
-						<input class="input100" type="number" name="contato" placeholder="contato">
+						<input class="input100 form-control phone-ddd-mask" type="number" name="contato" 
+						placeholder="contato">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "email">
