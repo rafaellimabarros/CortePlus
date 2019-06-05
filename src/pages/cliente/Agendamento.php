@@ -1,5 +1,5 @@
 <?php
-    require '../../classes/conexao.php';   
+    require '../../classes/conexao.php';
   session_start();
   if((!isset ($_SESSION['email']) == true) and (!isset ($_SESSION['senha']) == true))
 {
@@ -23,37 +23,40 @@ $logado = $_SESSION['email'];
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Salões Plus</title>
+  <title>Agendamento - Salões Plus</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
+  <link href="../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
+
 </head>
+
 <body>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Salões Plus</a>
+      <a class="navbar-brand" href="../../../index.php">Salões Plus</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+          <li class="nav-item" >
+            <a class="nav-link" href="../../../index.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nós</a>
+            <a class="nav-link" href="../salao/salao.php">Salões</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Serviços</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../cliente/Agendamento.php">Agendamentos</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="Agendamento.php">Agendamentos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -68,6 +71,7 @@ $logado = $_SESSION['email'];
       </div>
     </div>
   </nav>
+
   <!-- Header -->
   <header class="bg-primary py-5 mb-5">
     <div class="container h-100">
@@ -82,66 +86,33 @@ $logado = $_SESSION['email'];
 
   <!-- Page Content -->
   <div class="container">
-    <!-- row -->
+    <h1>Agendamentos</h1>
     <div class="row">
-        <!-- div principal-->
-        <div class="principal">
-          <!-- div filtros-->
-            <div class="filtros">
-             <!-- div filtros por bairro-->
-             <div class="filtroBairro">
-               <form name="bairro" method="post" action="">
-                <label>Selecione o Bairro:</label>
-                <select>
-                  <option>Selecione...</option>
-                   
-                  //abrimos um contador while para que enquanto houver registros ele continua no loopin
-                  <?php 
-                  $dado = $pdo->query('SELECT * FROM salao') ;
-                    foreach ($dado as $row) { ?>
-                  <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['bairro'] ?></option>
-                  <?php } ?>
-                </select>
-                <label>Selecione a Cidade:</label>
-                <select>
-                  <label>Selecione a Cidade:</label>
-                  <option>Selecione...</option>
-                  //abrimos um contador while para que enquanto houver registros ele continua no loopin
-                  <?php 
-                  $dado = $pdo->query('SELECT * FROM salao') ;
-                    foreach ($dado as $row) { ?>
-                  <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['cidade'] ?></option>
-                  <?php } ?>
-                </select>
-              </form>
-             </div>
-             <!-- /.div filtros por Bairro-->
 
-            </div>
-            <!-- /.div filtros-->
-            <!-- div dados-->
-            <div class="dados">
-               <table border="1">
+      <div class="resultado">
+         <table border="1">
                 <tr>
                   <td>Código</td>
-                  <td>Nome</td>
-                  <td>Logradouro</td>
-                  <td>Bairro</td>
-                  <td>Cidade</td>
+                  <td>data e horario</td>
                   <td>Ação</td>
 
                 </tr>
                 <?php 
-                  $dado = $pdo->query('SELECT * FROM salao') ;
+                  $cliente = $logado;
+                  $dado = $pdo->query("SELECT  codAgendamento , nome , agendamento ,email FROM agendamento INNER JOIN cliente on email = '$cliente'") ;
+                    /*INNER JOIN cliente on codCliente = codCliente
+                    INNER JOIN salao on codSalao = codSalao
+                    INNER JOIN servico on codSalaoServico_fk = codServico
+                    INNER JOIN funcionamento on codSalaoFuncionamento_fk = codSalaoFuncionamento_fk
+                    INNER JOIN forma de pagamento on codSalaoFormaPagamento_fk = codPagamento*/
                   foreach ($dado as $row) {
                   ?>
 
                 <tr>
-                  <td><?php echo $row['codSalao'];?></td>
-                  <td><?php echo $row['nomeSalao']; ?></td>
-                  <td><?php echo $row['logradouro']; ?></td>
-                  <td><?php echo $row['bairro']; ?></td>
-                  <td><?php echo $row['cidade']; ?></td>
+                  <td><?php echo $row['codAgendamento'];?></td>            
+                  <td><?php echo $row['email'];?></td>            
+                  <td><?php echo $row['agendamento']; ?></td>
+                  
                   <td>
                     <div class="container-login100-form-btn m-t-32">
                       <button class="login100-form-btn" data-toggle="modal" data-target="#exampleModal<?php echo $row['codSalao'];?>" data-whatever="@getbootstrap">
@@ -180,7 +151,7 @@ $logado = $_SESSION['email'];
                                 ?>
                                  </div>
                               <div class="form-group">
-                                <label for="message-text" class="col-form-label">Data e Horário:</label>                                
+                                <label for="message-text" class="col-form-label">Data e Horário:</label>       
                                 <input type="datetime-local" name="" class="form-control" id="message-text" />
                               </div>
                             </form>
@@ -200,39 +171,25 @@ $logado = $_SESSION['email'];
                 </tr>
                 <?php } ?>
               </table>
-            </div>
-            <!-- /.div filtros-->
-            
-        </div>
-        <!-- /.div principal -->
+      </div>
     </div>
-  <!-- /.row-->
+    <!-- /.row -->
+ 
+ 
   </div>
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark" style="margin-top: 100px;">
+  <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Salões Plus 2019</p>
     </div>
     <!-- /.container -->
   </footer>
 
-  <script type="text/javascript">
-     $('#exampleModal').on('show.bs.modal', function (event) {
-     var button = $(event.relatedTarget) // Button that triggered the modal
-     var recipient = button.data('whatever') // Extract info from data-* attributes
-  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-     var modal = $(this)
-     modal.find('.modal-title').text('New message to ' + recipient)
-     modal.find('.modal-body input').val(recipient)
-})
-  </script>
   <!-- Bootstrap core JavaScript -->
-  <script src="../../../vendor/jquery/jquery.min.js"></script>
-  <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="../../Salao%20Plus/vendor/jquery/jquery.min.js"></script>
+  <script src="../../Salao%20Plus/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

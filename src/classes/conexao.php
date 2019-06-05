@@ -1,5 +1,5 @@
 <?php try{
-		$pdo = new PDO('mysql:host=localhost;dbname=salaoplus','root','vertrigo');
+		$pdo = new PDO('mysql:host=localhost;dbname=salaoplusatualizado','root','vertrigo');
 		echo "Conectou no banco ... ";
 			;
 

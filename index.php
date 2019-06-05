@@ -35,9 +35,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nós</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Salões</a>
           </li>
           <li class="nav-item">
@@ -103,7 +100,7 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Agendamento!</a>
+            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary">Agendamento!</a>
           </div>
         </div>
       </div>
@@ -127,7 +124,7 @@
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Agendamento!</a>
+            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary">Agendamento!</a>
           </div>
         </div>
       </div>

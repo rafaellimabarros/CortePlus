@@ -5,7 +5,7 @@
 	<script type="text/javascript">
 		function msgOk(){
 			
-			window.location.href = "../pages/login.php";
+			window.location.href = "../pages/login.html";
 		}
 		function msgError(){
 			alert("Falha ao autenticar! "+ "Verifique os dados e tente novamente");
@@ -23,7 +23,7 @@ require ('conexao.php');
 	 $cpf = $_POST["cpf"];
 	 $cidade = $_POST["cidade"];
 	 $bairro = $_POST["bairro"];
-	 $endereco = $_POST["endereco"];
+	 $logradouro = $_POST["logradouro"];
 	 $nome = $_POST["nome"];
 	 $email = $_POST["email"];
 	 $senha = $_POST["senha"];
@@ -32,14 +32,14 @@ require ('conexao.php');
 	
 	
 		
-			$sql = 'INSERT INTO cliente(CPF,cidade,bairro,endereco,nome,email,senha,dataNascimento,contato)VALUES(:cpf,:cidade,:bairro,:endereco,:nome,:email,:senha,:data,:contato)';
+			$sql = 'INSERT INTO cliente(cpf,cidade,bairro,logradouro,nome,email,senha,dataNascimento,contato)VALUES(:cpf,:cidade,:bairro,:logradouro,:nome,:email,:senha,:data,:contato)';
 
 			$stmt = $pdo->prepare($sql);
 
 			$stmt->bindValue(':cpf',$cpf);
 			$stmt->bindValue(':cidade',$cidade);
 			$stmt->bindValue(':bairro',$bairro);
-			$stmt->bindValue(':endereco',$endereco);
+			$stmt->bindValue(':logradouro',$logradouro);
 			$stmt->bindValue(':nome',$nome);
 			$stmt->bindValue(':email',$email);
 			$stmt->bindValue(':senha',$senha);
