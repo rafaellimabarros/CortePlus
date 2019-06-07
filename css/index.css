@@ -10,9 +10,11 @@
 
 }
 header{
-	background: url("../img/back.jpg");
+	background-image: url("../img/index.jpg");
+	background-repeat: no-repeat;
 	width: 100%;
 	height: auto;
+	background-position: center;
 
 }
 .text-center{

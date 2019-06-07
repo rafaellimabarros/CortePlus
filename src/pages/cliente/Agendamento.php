@@ -30,7 +30,7 @@ $logado = $_SESSION['email'];
 
   <!-- Custom styles for this template -->
   <link href="../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="../../../css/index.css">
 </head>
 
 <body>

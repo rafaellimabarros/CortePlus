@@ -5,11 +5,11 @@
 	<script type="text/javascript">
 		function msgOk(){
 			
-			window.location.href = "../pages/cliente/homeCliente.php";
+			window.location.href = "../pages/salao/homeSalao.php";
 		}
 		function msgError(){
-			alert("Falha ao autenticar! "+ "Verifique usuario e senha");
-			window.location.href = "../pages/login.html";
+			alert("Falha ao autenticar! "+"<br>"+ "Verifique usuario e senha");
+			window.location.href = "../pages/loginSalao.html";
 		}
 
 	</script>

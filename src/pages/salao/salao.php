@@ -30,6 +30,7 @@ $logado = $_SESSION['email'];
 
   <!-- Custom styles for this template -->
   <link href="../../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../../css/index.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -47,10 +48,7 @@ $logado = $_SESSION['email'];
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nós</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
+            <a class="nav-link" href="servico.php">Serviços</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../cliente/Agendamento.php">Agendamentos</a>
@@ -97,7 +95,7 @@ $logado = $_SESSION['email'];
                    
                   //abrimos um contador while para que enquanto houver registros ele continua no loopin
                   <?php 
-                  $dado = $pdo->query('SELECT * FROM salao') ;
+                  $dado = $pdo->query('SELECT DISTINCT bairro FROM salao') ;
                     foreach ($dado as $row) { ?>
                   <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['bairro'] ?></option>
                   <?php } ?>
@@ -108,11 +106,14 @@ $logado = $_SESSION['email'];
                   <option>Selecione...</option>
                   //abrimos um contador while para que enquanto houver registros ele continua no loopin
                   <?php 
-                  $dado = $pdo->query('SELECT * FROM salao') ;
+                  $dado = $pdo->query('SELECT DISTINCT cidade FROM salao') ;
                     foreach ($dado as $row) { ?>
                   <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['cidade'] ?></option>
                   <?php } ?>
                 </select>
+                <button type="button" class="btn btn-primary">
+                            Pesquisar
+                </button>
               </form>
              </div>
              <!-- /.div filtros por Bairro-->
