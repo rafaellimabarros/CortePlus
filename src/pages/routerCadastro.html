@@ -15,50 +15,63 @@
 
   <!-- Custom styles for this template -->
   <link href="../../css/business-frontpage.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="../../css/index.css">
 </head>
 
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(74, 64, 138); font-size: 30px;" >
     <div class="container">
-      <a class="navbar-brand" href="../../index.php">Salões Plus</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">
+        <img src="../../img/iconetesouraatt.png" alt="Salao" style="height: 100px; width: 100px;">
+      </a>
+          <a href="#"style="font-size: 35px; color: white; font-family: sans-serif; margin-top: 15px;"> Salão Plus </a>
+    
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
+      <div class="collapse navbar-collapse" id="navbarResponsive" style="font-family: sans-serif;">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../../index.php">Home
+          <li class="nav-item active">
+            <a class="nav-link" href="../Salao%20Plus/index.php" style="color:white;">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nós</a>
+            <a class="nav-link" href="#"style="color:white;">Salões</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
+            <a class="nav-link" href="../Salao%20Plus/src/pages/routerCadastro.html" style="color:white;">Cadastro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../src/pages/routerCadastro.html">Cadastro</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../../src/pages/routerLogin.html">Login</a>
+            <a class="nav-link" href="../Salao%20Plus/src/pages/routerLogin.html" style="color:white;">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container" style="margin: 20px;">
+
+  <!-- Header -->
+  <header class="bg-dange py-5 mb-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center back">
+        <div class="col-lg-12">
+          <h1 class="display-4 text-white mt-5 mb-2" style="font-family: sans-serif;font-size: 50px;"> </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="align-content: center;margin-top: -50px ;margin-left: 25%;margin-bottom: 30px;">
     <div class="row">
           <div class="col-md-4 mb-5">
         <div class="card h-100">
           <img class="card-img-top" src="../../img/salao.png" alt="">
           <div class="card-body">
-            <h4 class="card-title">Salão</h4>
+            <h4 class="card-title" style="margin-left: 116px; ">Salão</h4>
           <div class="card-footer">
-            <a href="cadastroSalao.html" class="btn btn-primary">Cadastrar Salão!</a>
+            <a href="cadastroSalao.html" class="btn btn-primary" style="background-color: rgb(74, 64, 138);margin-left: 60px;">Cadastrar Salão</a>        
           </div>
         </div>
       </div>
@@ -68,9 +81,9 @@
         <div class="card h-100">
           <img class="card-img-top" src="../../img/cliente.png" alt="">
           <div class="card-body">
-            <h4 class="card-title">Cliente</h4>
+            <h4 class="card-title" style="margin-left: 116px;">Cliente</h4>
           <div class="card-footer">
-            <a href="cadastro.php" class="btn btn-primary">Cadastrar Cliente!</a>
+            <a href="cadastro.php" class="btn btn-primary"style="background-color: rgb(74, 64, 138); margin-left: 51px;">Cadastrar Cliente!</a>
           </div>
         </div>
       </div>
@@ -81,13 +94,87 @@
 
   </div>
   <!-- /.container -->
-
+<div class="teste"></div>
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Salões Plus 2019</p>
+  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: dimgray;">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row" style="font-family: sans-serif;color: white;">
+  
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto">
+  
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Objetivo</h5>
+          <p> A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior 
+            controle e gerência de tempo. </p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+
+  
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Contato</h5>
+  
+            <p>Centro,Aquiraz</p>
+            <p> SalaoPlus@Gmail.com.br</p>
+            <p> (85) 985528894 </p>          
+        
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
     </div>
-    <!-- /.container -->
+  
+
+    <!-- Social buttons -->
+
+    <ul class="list-unstyled list-inline text-center" >
+      <li class="list-inline-item" >
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+          <img src="../../img/iconeFace.png" style="width: 50px;">
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+          <img src="../../img/iconeInsta.png" style="width: 50px;">
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+          <img src="../../img/iconeTwitter.png" style="width: 50px;">
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+          <img src="../../img/IconeGit.png" style="width: 50px;">
+        </a>
+      </li>
+    </ul>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"style="background-color: #363636;color:white;">© 2019 Copyright: SalãoPlus
+    </div>
+    <!-- Copyright -->
+  
   </footer>
 
   <!-- Bootstrap core JavaScript -->

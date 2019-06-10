@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<title>Cadastro de salões</title>
+	<title>Cadastro de salão</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -26,14 +26,47 @@
 	<link rel="stylesheet" type="text/css" href="../../css/util.css">
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
 <!--===============================================================================================-->
+<link href="../../css/business-frontpage.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../css/index.css">
+<!--===============================================================================================-->
 </head>
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+		<nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(74, 64, 138); font-size: 30px;" >
+				<div class="container">
+				  <a class="navbar-brand" href="#">
+					<img src="../../img/iconetesouraatt.png" alt="Salao" style="height: 100px; width: 100px;">
+				  </a>
+					  <a href="#"style="font-size: 35px; color: white; font-family: sans-serif; margin-top: 15px;"> Salão Plus </a>
+				
+					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+
+				  <div class="collapse navbar-collapse" id="navbarResponsive" style="font-family: sans-serif;">
+					<ul class="navbar-nav ml-auto">
+					  <li class="nav-item active">
+						<a class="nav-link" href="../Salao%20Plus/index.php" style="color:white;font-size: 30px;">Home
+						  <span class="sr-only">(current)</span>
+						</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"style="color:white;font-size: 30px;">Salões</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="../Salao%20Plus/src/pages/routerCadastro.html" style="color:white;font-size: 30px;">Cadastro</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="../Salao%20Plus/src/pages/routerLogin.html" style="color:white;font-size: 30px;">Login</a>
+					  </li>
+					</ul>
+				  </div>
+				</div>
+			  </nav>
+	<div class="limiter" style="margin-top: 50px;">
+		<div class="container-login100" style="background-image: url(../../img/loginDegrade2.jpg);">
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Cadastro de Salões 
+					Cadastro Salão
 				</span>
 				<form class="login100-form validate-form p-b-33 p-t-5" action="../classes/cadastroSalao.php" method="post">
 					<div class="wrap-input100 validate-input" data-validate = "Nome do Salão">
@@ -104,6 +137,15 @@
 	
 
 	<div id="dropDownSelect1"></div>
+	<footer>
+
+			<!-- Copyright -->
+			<div class="footer-copyright text-center py-3"style="background-color: #363636;color:white;">© 2019 Copyright: SalãoPlus
+			</div>
+			<!-- Copyright -->
+		  
+		  </footer>
+	
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

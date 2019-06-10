@@ -1,5 +1,6 @@
 <?php try{
-		$pdo = new PDO('mysql:host=localhost;dbname=salaoplusatualizado','root','vertrigo');
+		$pdo = new PDO('mysql:host=localhost;dbname=salaoplus','root','vertrigo');
+		$pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
 		echo "Conectou no banco ... ";
 			;
 

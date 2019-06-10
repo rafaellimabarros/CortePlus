@@ -3,28 +3,34 @@
 	
 }
 /*caixa transparente*/
-#box{
+/*#box{
 	position: absolute;
 	left: 56%;
 	
 
-}
+}*/
 header{
-	background-image: url("../img/index.jpg");
+	background-image: url("../img/instadegrade.png");
 	background-repeat: no-repeat;
 	width: 100%;
 	height: auto;
 	background-position: center;
 
 }
+/*
+.teste{
+	width: 100%;
+	height: 500px;
+	background: red;
+}
 .text-center{
 	margin-top: 0px;
 }
 
-/*body{
+.body{
 	background: url("../img/index.jpg");
 }
-*/
+
 a:hover{
 	text-decoration: none;
 
@@ -40,9 +46,10 @@ a:hover{
 /* No media query since this is the default in Bootstrap */
 
 /* Small devices (tablets, 768px and up) */
+/*
 @media (max-width:769px) {
 	/*Apaga a Logo do Site */
-	.home{
+/*	.home{
 		display: none;
 	}
 	#icon1{
@@ -51,11 +58,11 @@ a:hover{
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width:769px) {
+/*@media (min-width:769px) {
 	.pull{
 		margin-left: 100px;
 	 }
 	}
 
 /* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { ... }
+/*@media (min-width: @screen-lg-min) { ... }

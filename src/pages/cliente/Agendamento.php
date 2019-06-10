@@ -23,6 +23,7 @@ $logado = $_SESSION['email'];
   <meta name="description" content="">
   <meta name="author" content="">
 
+
   <title>Agendamento - Salões Plus</title>
 
   <!-- Bootstrap core CSS -->
@@ -31,6 +32,27 @@ $logado = $_SESSION['email'];
   <!-- Custom styles for this template -->
   <link href="../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/index.css">
+  <link rel="icon" type="image/png" href="../../../images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="../../../vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="../../../css/util.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/main.css">
+<!--===============================================================================================-->
 </head>
 
 <body>
@@ -38,14 +60,14 @@ $logado = $_SESSION['email'];
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="../../../index.php">Salões Plus</a>
+      <a class="navbar-brand" href="../../../index.html">Salões Plus</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" >
-            <a class="nav-link" href="../../../index.php">Home
+            <a class="nav-link" href="../../../index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -86,99 +108,86 @@ $logado = $_SESSION['email'];
 
   <!-- Page Content -->
   <div class="container">
-    <h1>Agendamentos</h1>
-    <div class="row">
+    <div class="wrap-login100 p-t-30 p-b-50" style="margin-left: 30%">
+     <fieldset >
+        <legend>Agendamento</legend>
+           <!-- div form -->
+                <form class="login100-form validate-form p-b-33 p-t-5" action="../../classes/inseriAgendamento.php" method="POST">
 
-      <div class="resultado">
-         <table border="1">
-                <tr>
-                  <td>Código</td>
-                  <td>data e horario</td>
-                  <td>Ação</td>
-
-                </tr>
-                <?php 
-                  $cliente = $logado;
-                  $dado = $pdo->query("SELECT  codAgendamento , nome , agendamento ,email FROM agendamento INNER JOIN cliente on email = '$cliente'") ;
-                    /*INNER JOIN cliente on codCliente = codCliente
-                    INNER JOIN salao on codSalao = codSalao
-                    INNER JOIN servico on codSalaoServico_fk = codServico
-                    INNER JOIN funcionamento on codSalaoFuncionamento_fk = codSalaoFuncionamento_fk
-                    INNER JOIN forma de pagamento on codSalaoFormaPagamento_fk = codPagamento*/
-                  foreach ($dado as $row) {
-                  ?>
-
-                <tr>
-                  <td><?php echo $row['codAgendamento'];?></td>            
-                  <td><?php echo $row['email'];?></td>            
-                  <td><?php echo $row['agendamento']; ?></td>
-                  
-                  <td>
+                    <div class="wrap-input100 validate-input" data-validate = "salao">
+                      <select name="codSalao" class="input100"
+                      required="true">
+                        <option>Selecione o salao...</option>
+                            <?php 
+                            $dado = $pdo->query('SELECT DISTINCT * FROM salao') ;
+                              foreach ($dado as $row) { ?>
+                            <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['nomeSalao'] ?></option>
+                            <?php } ?>
+                      </select>
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+                   <div>
+                    <?php
+                       $dado = $pdo->query('SELECT * FROM cliente');
+                        foreach ($dado as $row) { ?>
+                    <input type="hidden" name="codCliente" value="<?php
+                     echo $row['codCliente'] ?>">
+                    <?php  } ?>
+                   </div>
+                     <div class="wrap-input100 validate-input" data-validate = "servico">
+                      <select name="codServico" class="input100" 
+                      required="true">
+                        <option>Selecione o servico...</option>
+                            <?php 
+                            $dado = $pdo->query('SELECT DISTINCT * FROM servico') ;
+                              foreach ($dado as $row) { ?>
+                            <option value="<?php echo $row['codServico'] ?>"><?php echo $row['descricaoServico'] ?></option>
+                            <?php } ?>
+                      </select>
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+                       <div class="wrap-input100 validate-input">
+                      <select name="codPagamento" class="input100"
+                      required="true">
+                        <option>Selecione a forma de pagamento...</option>
+                            <?php 
+                            $dado = $pdo->query('SELECT DISTINCT * FROM formadepagamento') ;
+                              foreach ($dado as $row) { ?>
+                            <option value="<?php echo $row['codPagamento'] ?>"><?php echo $row['descricaoPagamento'] ?></option>
+                            <?php } ?>
+                      </select>
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate = "funcionamento">
+                       <select name="codFuncionamento" class="input100"
+                      required="true" type="hidden">
+                            <?php 
+                            $dado = $pdo->query('SELECT DISTINCT * FROM funcionamento') ;
+                              foreach ($dado as $row) { ?>
+                            <option value="<?php echo $row['codFuncionamento'] ?>"><?php echo $row['descricaoFuncionamento'] ?></option>
+                            <?php } ?>
+                      </select>
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate = "agendamento">
+                       <input type="time" name="horaAgendamento" class="input100">
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
+                    <div class="wrap-input100 validate-input" data-validate = "agendamento">
+                       <input type="date" name="dataAgendamento" class="input100">
+                      <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    </div>
                     <div class="container-login100-form-btn m-t-32">
-                      <button class="login100-form-btn" data-toggle="modal" data-target="#exampleModal<?php echo $row['codSalao'];?>" data-whatever="@getbootstrap">
-                        Agendamento
-                    </button>
-                  <!-- div modal-->
-                    <div class="modal fade" id="exampleModal<?php echo $row['codSalao'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><?php echo $row['nomeSalao']; ?></h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                          <div class="modal-body">
-                            <form action="" method="" >
-                              <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Serviços:</label>
-                                
-                                  
-                                  <?php 
-                                  $codSalao = $row['codSalao'];
-                                  $dado = $pdo->query("SELECT DISTINCT descricaoServico FROM salao 
-                                    INNER JOIN salaoServico on codSalao = codSalao_fk 
-                                    INNER JOIN servico on codServico_fk = codServico
-                                    WHERE codSalao =' $codSalao' ") ;
-                                  
+                      <button class="login100-form-btn">
+                        agendar
+                      </button>
+                    </div>  
 
-                                  echo "<select name='' id='recipient-name' class='form-control'>";
-                                    foreach ($dado as $row) {
-
-                                   echo "<option value='".$row["codServico"]."'>".$row["descricaoServico"]."</option>";
-                                  } 
-                                echo "</select>";
-                                ?>
-                                 </div>
-                              <div class="form-group">
-                                <label for="message-text" class="col-form-label">Data e Horário:</label>       
-                                <input type="datetime-local" name="" class="form-control" id="message-text" />
-                              </div>
-                            </form>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">
-                            <a href="../../classes/inseriAgendamento.php">Agendar</a>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                     <!-- /.div modal--> 
-                    </div>
-                  </td>
-                </tr>
-                <?php } ?>
-              </table>
+                  </form>
+     </fieldset>
       </div>
-    </div>
-    <!-- /.row -->
- 
- 
   </div>
-  <!-- /.container -->
-
+<!-- \. Page Content -->
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
@@ -191,5 +200,21 @@ $logado = $_SESSION['email'];
   <script src="../../Salao%20Plus/vendor/jquery/jquery.min.js"></script>
   <script src="../../Salao%20Plus/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
+--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
 
 </html>

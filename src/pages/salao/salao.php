@@ -87,7 +87,7 @@ $logado = $_SESSION['email'];
           <!-- div filtros-->
             <div class="filtros">
              <!-- div filtros por bairro-->
-             <div class="filtroBairro">
+            <!-- <div class="filtroBairro">
                <form name="bairro" method="post" action="">
                 <label>Selecione o Bairro:</label>
                 <select>
@@ -115,38 +115,31 @@ $logado = $_SESSION['email'];
                             Pesquisar
                 </button>
               </form>
-             </div>
+             </div> -->
              <!-- /.div filtros por Bairro-->
 
             </div>
             <!-- /.div filtros-->
             <!-- div dados-->
-            <div class="dados">
-               <table border="1">
-                <tr>
-                  <td>Código</td>
-                  <td>Nome</td>
-                  <td>Logradouro</td>
-                  <td>Bairro</td>
-                  <td>Cidade</td>
-                  <td>Ação</td>
 
-                </tr>
+            <div class="dados" style="margin-left: 30%">
+              
                 <?php 
                   $dado = $pdo->query('SELECT * FROM salao') ;
                   foreach ($dado as $row) {
                   ?>
-
-                <tr>
-                  <td><?php echo $row['codSalao'];?></td>
-                  <td><?php echo $row['nomeSalao']; ?></td>
-                  <td><?php echo $row['logradouro']; ?></td>
-                  <td><?php echo $row['bairro']; ?></td>
-                  <td><?php echo $row['cidade']; ?></td>
-                  <td>
+                   <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="../../../img/salaoslide1.jpg" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo $row['nomeSalao']; ?></h5>
+                        <p class="card-text">Endereço:<?php echo $row['logradouro']; ?></p>
+                        <p class="card-text">Bairro:<?php echo $row['bairro']; ?></p>
+                        <p class="card-text">Contato:<?php echo $row['contato']; ?></p>
+                        <p class="card-text">Email:<?php echo $row['email']; ?></p>
+                        
                     <div class="container-login100-form-btn m-t-32">
-                      <button class="login100-form-btn" data-toggle="modal" data-target="#exampleModal<?php echo $row['codSalao'];?>" data-whatever="@getbootstrap">
-                        Agendamento
+                      <button class="login100-form-btn btn-primary"  data-toggle="modal" data-target="#exampleModal<?php echo $row['codSalao'];?>" data-whatever="@getbootstrap">
+                        <a href="../cliente/Agendamento.php" style="color: white;">Agendamento</a>
                     </button>
                   <!-- div modal-->
                     <div class="modal fade" id="exampleModal<?php echo $row['codSalao'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -159,10 +152,13 @@ $logado = $_SESSION['email'];
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="" method="" >
+                            <form action="../../classes/inseriAgendamento.php" method="post" >
+                              <div class="form-group">
+                                <label for="message-text" class="col-form-label">Nome:</label>       
+                               <h5 class="modal-title" id="exampleModalLabel" name="nome">
+                              </div>
                               <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Serviços:</label>
-                                
                                   
                                   <?php 
                                   $codSalao = $row['codSalao'];
@@ -189,7 +185,7 @@ $logado = $_SESSION['email'];
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                             <button type="button" class="btn btn-primary">
-                            <a href="../../classes/inseriAgendamento.php">Agendar</a>
+                            Agendar
                             </button>
                           </div>
                         </div>
@@ -197,10 +193,12 @@ $logado = $_SESSION['email'];
                     </div>
                      <!-- /.div modal--> 
                     </div>
-                  </td>
-                </tr>
+                </div>
+              </div>
+                
+                
                 <?php } ?>
-              </table>
+              
             </div>
             <!-- /.div filtros-->
             
