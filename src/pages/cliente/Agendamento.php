@@ -78,7 +78,7 @@ $logado = $_SESSION['email'];
             <a class="nav-link" href="#">Serviços</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="Agendamento.php">Agendamentos</a>
+            <a class="nav-link" href="Agendamentos.php">Agendamentos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">

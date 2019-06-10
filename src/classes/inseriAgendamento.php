@@ -23,7 +23,8 @@ require ('conexao.php');
   					  
   					  
 				if($data->rowCount()>0 && $hora->rowCount()>0) {			
-					echo "Horário já marcado !!!";
+					echo "<script>alert('Horário já marcado !!!');</script>";
+					header("refresh:0.5;url=../pages/cliente/agendamento.php");
 				}else{
 					$sql = "INSERT INTO clienteagendamento(codCliente, codSalao,codSalaoServico_fk,codSalaoFuncionamento_fk,codSalaoFormaPagamento_fk, dataAgendamento, horaAgendamento) VALUES(:codCliente,:codSalao,:codSalaoServico_fk,:codSalaoFuncionamento_fk,:codSalaoFormaPagamento_fk,:dataAgendamento,:horaAgendamento)";
 							
@@ -47,8 +48,9 @@ require ('conexao.php');
 							}*/
 					echo $stmt->rowCount();	
 					if($stmt->rowCount()>0){
-						//echo "<script>alert('agendado com sucesso');</script>";
-						//header('Location:../pages/cliente/Agendamentos.php');
+						echo "<script>alert('agendado com sucesso');</script>";
+						header('refresh:0.5;url=../pages/cliente/homeCliente.php');
+
 
 					}
 				}
@@ -56,7 +58,7 @@ require ('conexao.php');
 							
 
 			}else{
-				echo "Prencha todos os campos!! !!!";
+				echo "<script>alert('Prencha todos os campos!! ');</script>";
 
 
 		}

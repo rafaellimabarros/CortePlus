@@ -5,5 +5,5 @@
 		$_SESSION['email'] , 
 		$_SESSION['senha'] 
 	);
-	header('location:../../index.php')
+	header('location:../../index.html')
 ?>

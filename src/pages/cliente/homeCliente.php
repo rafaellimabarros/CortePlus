@@ -56,9 +56,6 @@ $logado = $_SESSION['email'];
             <a class="nav-link" href="../salao/salao.php">Salões</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Agendamentos</a>
           </li>
           <li class="nav-item">
@@ -95,6 +92,7 @@ $logado = $_SESSION['email'];
         <h2>Objetivo</h2>
         <hr>
         <p align="justify">A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior controle e gerência de tempo. E assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualuqer salão e a qualquer hora!</p>
+        <button>Destaques</button>
       </div>
       <div class="col-md-4 mb-5">
         <h2>Contato</h2>

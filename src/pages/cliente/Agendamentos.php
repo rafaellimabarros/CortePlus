@@ -45,7 +45,7 @@ $logado = $_SESSION['email'];
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" >
-            <a class="nav-link" href="../../../index.php">Home
+            <a class="nav-link" href="../../../index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>

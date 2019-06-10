@@ -1,6 +1,5 @@
 *{
 	margin: 0;
-	
 }
 /*caixa transparente*/
 /*#box{
@@ -9,12 +8,49 @@
 	
 
 }*/
-header{
-	background-image: url("../img/instadegrade.png");
+body{
+	background-image: url("../img/salao.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
-	height: auto;
+	height: 250px;
 	background-position: center;
+}
+
+.index{
+	top: 10px;
+	text-align:center;
+	color: white;
+	margin:180px;	
+
+}
+.index h1{
+	font-size: 100px;
+	border-bottom: 3px solid white;
+	margin:30px;
+	}
+.index p{
+	font-size: 20px;
+	margin:30px;
+	}
+.index a{
+	padding: 10px;
+	border: 3px solid white;
+	margin: 20px;
+	color: white;
+}
+.somos{
+	color: black;
+}
+#Destaques{
+	margin-top: 500px;
+	
+}
+a:hover{
+	background: grey;
+
+}
+.index a:hover{
+	background: rgb(116, 216, 232);
 
 }
 /*
