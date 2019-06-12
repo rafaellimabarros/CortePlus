@@ -29,25 +29,24 @@ $logado = $_SESSION['email'];
 
   <!-- Custom styles for this template -->
   <link href="../../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../../../css/index.css">
+<link rel="stylesheet" type="text/css" href="../../../css/homeCliente.css">
 </head>
 
 <body>
-
- <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top" style="background-color: rgb(74, 64, 138); font-size: 30px;" >
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" style=" font-size: 20px; background:black" >
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="../../../img/iconetesouraatt.png" alt="Salao" style="height: 100px; width: 100px;">
+        <img src="../../../img/iconetesouraatt.png" alt="Salao" style="height: 80px; width: 80px;">
       </a>
-          <a href="#"style="font-size: 35px; color: white; font-family: sans-serif; margin-top: 15px;"> Salão Plus </a>
+          <a href="#"style="color: white; font-family: sans-serif;"> Salão Plus </a>
     
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
+          <li class="nav-item" >
             <a class="nav-link" href="../../../index.html">Home
               <span class="sr-only">(current)</span>
             </a>
@@ -55,30 +54,30 @@ $logado = $_SESSION['email'];
           <li class="nav-item">
             <a class="nav-link" href="../salao/salao.php">Salões</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Agendamentos</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="Agendamentos.php">Agendamentos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li class="nav-item disabled">
+            <a class="nav-link " href="#">
              <?php 
-                echo "$logado"
+                echo "Bem Vindo $logado"
               ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../classes/sair.php">sair</a>
+            <a class="nav-link" href="../../classes/sair.php">Sair</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  
   <!-- Header -->
-  <header class="bg-dange py-5 mb-5" style="margin-top:100px;color: MediumVioletRed ">
+  <header class="bg-dange py-5 mb-5" >
     <div class="container h-100">
       <div class="row h-100 align-items-center back">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2" style="font-family: sans-serif;font-size: 50px;"> Sua vida mais Bela!</h1>
+          
+
         </div>
       </div>
     </div>
@@ -86,77 +85,29 @@ $logado = $_SESSION['email'];
 
   <!-- Page Content -->
   <div class="container">
-
-    <div class="row">
-      <div class="col-md-8 mb-5">
-        <h2>Objetivo</h2>
-        <hr>
-        <p align="justify">A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior controle e gerência de tempo. E assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualuqer salão e a qualquer hora!</p>
-        <button>Destaques</button>
-      </div>
-      <div class="col-md-4 mb-5">
-        <h2>Contato</h2>
-        <hr>
-        <address>
-          <strong>Salão Plus</strong>
-          <br>Centro
-          <br>Aquiraz, Ceará
-          <br>
-        </address>
-        <address>
-          <abbr title="Phone"></abbr>
-          (85) 985528894
-          <br>
-          <abbr title="Email"></abbr>
-          <a href="mailto:#">SalaoPlus@gmail.com</a>
-        </address>
-      </div>
+    <div class="index">
+      <h1>Salão Plus</h1>
+      <p>A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obterão um maior controle e gerência de tempo. Assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualquer salão e a qualquer hora!</p>
+      <a href="#Destaques">Destaques</a>
     </div>
-    <!-- /.row -->
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" style="margin-bottom: 20px; margin-top: 10px;">
-          <div class="carousel-item active" style="width: 100%; height: 500px;">
-            <img class="d-block w-100" src="../../../img/salaoslide1.jpg" alt="First slide" >
-          </div>
-          <div class="carousel-item" style="width: 100%; height: 500px;">
-            <img class="d-block w-100" src="../../../img/salaoSlide2.jpg" alt="Second slide">
-          </div>
-          <div class="carousel-item" style="width: 100%; height: 500px;">
-            <img class="d-block w-100" src="../../../img/salaoSlide3.jpg" alt="Third slide">
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
-    <div class="row">
-      
+    <div id="Destaques">
+      <h1>Destaques</h1>
+    </div>
+    <div class="row"  style="margin-top: 250px">
       
       <div class="col-md-4 mb-5">
         <div class="card h-100">
+
           <img class="card-img-top" src="../../../img/lequipe.png" alt="">
           <div class="card-body">
             <h4 class="card-title">L'Equipe</h4>
             <p class="card-text" align="justify">O salão de beleza L'Equipe oferece uma equipe formado por especialistas com o objetivo de proporcionar experiências inovadoras em cortes de cabelo, coloração e estética do corpo.</p>
           </div>
           <div class="card-footer">
-            <a href="../../../src/pages/salao/salao.php" class="btn btn-primary"style="background-color: rgb(74, 64, 138);">Agendar</a>
+            <a href="../../pages/login.html" class="btn btn-primary"style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>
-
 
       <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -166,7 +117,7 @@ $logado = $_SESSION['email'];
             <p class="card-text" align="justify"> Salão Beleza Oculta faz com que a ida ao salão se torne um momento prazeroso. Eles ostentam uma equipe de profissionais competentes, com os melhores cursos da área, para garantir aquele resultado incrível para você. </p>
           </div>
           <div class="card-footer">
-            <a href="../../../src/pages/salao/salao.php" class="btn btn-primary"style="background-color: rgb(74, 64, 138);">Agendar</a>
+            <a href="../../pages/login.html" class="btn btn-primary"style="background-color: #00BFFF"; >Agendar</a>
           </div>
         </div>
       </div>
@@ -178,7 +129,7 @@ $logado = $_SESSION['email'];
             <p class="card-text" align="justify">Unhas maravilhosas, penteados divos, e cabelos musos. Na D'aque você encontra resultados incríveis para se inspirar para a próxima transformação.</p>
           </div>
           <div class="card-footer">
-            <a href="../../../src/pages/salao/salao.php" class="btn btn-primary" style="background-color: rgb(74, 64, 138);">Agendar</a>
+            <a href="../../pages/login.html" class="btn btn-primary" style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>
@@ -189,11 +140,12 @@ $logado = $_SESSION['email'];
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: dimgray;">
+
+  <a name="sobre">
+  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: rgb(23, 36, 41);" id="sobre">
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-  
+    <div class="container text-center text-md-left">  
       <!-- Grid row -->
       <div class="row" style="font-family: sans-serif;color: white;">
   
@@ -201,8 +153,8 @@ $logado = $_SESSION['email'];
         <div class="col-md-4 mx-auto">
   
           <!-- Content -->
-          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Objetivo</h5>
-          <p align="justify"> A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior 
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Quem Somos?</h5>
+          <p align="justify"> A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obterão um maior 
             controle e gerência de tempo. </p>
   
         </div>
@@ -264,11 +216,12 @@ $logado = $_SESSION['email'];
       </li>
     </ul>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3"style="background-color: #363636;color:white;">© 2019 Copyright: SalãoPlus
+    <div class="footer-copyright text-center py-3"style="background-color: black;color:white;">© 2019 Copyright: SalãoPlus
     </div>
     <!-- Copyright -->
   
   </footer>
+</a>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

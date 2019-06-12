@@ -14,7 +14,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
+  <link href="../../../css/business-frontpage.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 
@@ -22,10 +22,10 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg fixed-top" style=" font-size: 20px; background:black" >
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="index.html">
         <img src="img/iconetesouraatt.png" alt="Salao" style="height: 80px; width: 80px;">
       </a>
-          <a href="#"style="color: white; font-family: sans-serif;"> Salão Plus </a>
+          <a href=""style="color: white; font-family: sans-serif;"> Salão Plus </a>
     
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,21 +33,21 @@
       <div class="collapse navbar-collapse" id="navbarResponsive" style="font-family: sans-serif;">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="../Salao%20Plus/index.html" style="color:white;">Home
+            <a class="nav-link" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../src/pages/salao/salao.php"style="color:white;">Salões</a>
+            <a class="nav-link" href="../SaloesPlus/src/pages/salao/salao.php">Salões</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#sobre"style="color:white;">Sobre</a>
+            <a class="nav-link" href="#sobre">Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../Salao%20Plus/src/pages/routerCadastro.html" style="color:white;">Cadastro</a>
+            <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal2">Cadastro</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../Salao%20Plus/src/pages/routerLogin.html" style="color:white;">Login</a>
+            <a class="nav-link" href="" data-toggle="modal" data-target="#exampleModal">Login</a>
           </li>
         </ul>
       </div>
@@ -70,10 +70,16 @@
   <div class="container">
     <div class="index">
       <h1>Salão Plus</h1>
-      <p>A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior controle e gerência de tempo. E assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualuqer salão e a qualquer hora!</p>
+      <p>A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obterão um maior controle e gerência de tempo. Assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualquer salão e a qualquer hora!</p>
       <a href="#Destaques">Destaques</a>
     </div>
-    <div class="row" id="Destaques" style="margin-top: 250px">
+    <div id="Destaques">
+    
+    </div>
+    <div>
+      <h1 style="color: white;">Destaques</h1>
+    </div>
+    <div class="row"  style="margin-top0px">
       
       <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -84,11 +90,10 @@
             <p class="card-text" align="justify">O salão de beleza L'Equipe oferece uma equipe formado por especialistas com o objetivo de proporcionar experiências inovadoras em cortes de cabelo, coloração e estética do corpo.</p>
           </div>
           <div class="card-footer">
-            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary"style="background-color: rgb(74, 64, 138);">Agendar</a>
+            <a href="../SaloesPlus/src/pages/login.html" class="btn btn-primary"style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>
-
 
       <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -98,7 +103,7 @@
             <p class="card-text" align="justify"> Salão Beleza Oculta faz com que a ida ao salão se torne um momento prazeroso. Eles ostentam uma equipe de profissionais competentes, com os melhores cursos da área, para garantir aquele resultado incrível para você. </p>
           </div>
           <div class="card-footer">
-            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary"style="background-color: rgb(74, 64, 138);">Agendamento!</a>
+            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary"style="background-color: #00BFFF"; >Agendar</a>
           </div>
         </div>
       </div>
@@ -110,7 +115,7 @@
             <p class="card-text" align="justify">Unhas maravilhosas, penteados divos, e cabelos musos. Na D'aque você encontra resultados incríveis para se inspirar para a próxima transformação.</p>
           </div>
           <div class="card-footer">
-            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary" style="background-color: rgb(74, 64, 138);">Agendamento!</a>
+            <a href="../Salao%20Plus/src/pages/login.html" class="btn btn-primary" style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>
@@ -121,7 +126,57 @@
   <!-- /.container -->
 
   <!-- Footer -->
-  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: dimgray;" id="sobre">
+
+<!-- Modal Login-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Salão Plus - Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Selecione o tipo de Cliente
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <a href="../SaloesPlus/src/pages/loginSalao.html" style="color:white">Salão</a>
+        </button>
+        <button type="button" class="btn btn-primary"><a href="../SaloesPlus/src/pages/login.html" style="color:white">cliente</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- .\ Modal Login-->
+
+
+<!-- Modal cadastro-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Salão Plus - Cadastro</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Selecione o tipo de Cliente
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">
+          <a href="../SaloesPlus/src/pages/cadastroSalao.html" style="color:white">Salão</a>
+        </button>
+        <button type="button" class="btn btn-primary"><a href="../SaloesPlus/src/pages/cadastro.html" style="color:white">cliente</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- .\ Modal cadastro-->
+  <a name="sobre">
+  <footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: rgb(23, 36, 41);" id="sobre">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">  
@@ -133,7 +188,7 @@
   
           <!-- Content -->
           <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Quem Somos?</h5>
-          <p align="justify"> A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obteram um maior 
+          <p align="justify"> A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obterão um maior 
             controle e gerência de tempo. </p>
   
         </div>
@@ -195,11 +250,12 @@
       </li>
     </ul>
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3"style="background-color: #363636;color:white;">© 2019 Copyright: SalãoPlus
+    <div class="footer-copyright text-center py-3"style="background-color: black;color:white;">© 2019 Copyright: SalãoPlus
     </div>
     <!-- Copyright -->
   
   </footer>
+</a>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

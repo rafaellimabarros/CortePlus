@@ -9,7 +9,7 @@
 
 }*/
 body{
-	background-image: url("../img/backpreto.jpg");
+	background-image: url("../img/cliente.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
 	background-position: top;
@@ -37,7 +37,16 @@ body{
 	margin: 20px;
 	color: white;
 }
-nav a:visited{
+.somos{
+	color: black;
+}
+#Destaques{
+	margin-bottom: -180px;
+	color: white;
+	
+	
+}
+nav a{
 	color: white;
 }
 nav a:hover{
@@ -46,18 +55,16 @@ nav a:hover{
 	border-bottom: 3px solid white;
 	background: black;
 }
-.somos{
-	color: black;
+.disabled{
+ pointer-events: none;
 }
-#Destaques{
-	margin-top: 300px;
-	margin-bottom: 400px;
-	
+.disabled a{
+	color: white;	
 }
 
-button a : hover{
-	text-decoration: none;
-	color: white;
+a:hover{
+	background: grey;
+
 }
 .index a:hover{
 	background: rgb(116, 216, 232);

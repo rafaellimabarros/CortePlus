@@ -30,7 +30,7 @@ $logado = $_SESSION['email'];
 
   <!-- Custom styles for this template -->
   <link href="../../../Salao%20Plus/css/business-frontpage.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../../../css/index.css">
+  <link rel="stylesheet" type="text/css" href="../../../css/salao.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -64,12 +64,16 @@ $logado = $_SESSION['email'];
     </div>
   </nav>
   <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
+  <header class="bg-dange py-5 mb-5" >
     <div class="container h-100">
-      <div class="row h-100 align-items-center">
+      <div class="row h-100 align-items-center back">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Salão Plus</h1>
-          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+            <div class="index"> 
+              <h1>Salões</h1>
+      <p>A equipe SalãoPlus tem como principal objetivo agilizar a sua vida! com o nosso sistema os salões obterão um maior controle e gerência de tempo. Assim facilitando a vida do consumidor final, podendo realizar o agendamento de serviços em qualquer salão e a qualquer hora!</p>
+      <a href="#Destaques">Visitar Salões</a>
+    </div>      
+
         </div>
       </div>
     </div>
@@ -82,7 +86,7 @@ $logado = $_SESSION['email'];
         <!-- div principal-->
         <div class="principal">
           <!-- div filtros-->
-            <div class="filtros">
+            <div class="filtros" id="Destaques">
              <!-- div filtros por bairro-->
             <!-- <div class="filtroBairro">
                <form name="bairro" method="post" action="">
@@ -125,18 +129,21 @@ $logado = $_SESSION['email'];
                   $dado = $pdo->query('SELECT * FROM salao') ;
                   foreach ($dado as $row) {
                   ?>
-                   <div class="card" style="width: 18rem;">
-                      <img class="card-img-top" src="../../../img/salaoslide1.jpg" alt="Card image cap">
+                   <div class="card estiloCard w-50 p-3" style="width: 18rem;">
+                      <div class="card-body">
+                        <img class="card-img-top" src="../../../img/salaoslide1.jpg" alt="Card image cap">
                       <div class="card-body">
                         <h5 class="card-title"><?php echo $row['nomeSalao']; ?></h5>
                         <p class="card-text">Endereço:<?php echo $row['logradouro']; ?></p>
                         <p class="card-text">Bairro:<?php echo $row['bairro']; ?></p>
                         <p class="card-text">Contato:<?php echo $row['contato']; ?></p>
                         <p class="card-text">Email:<?php echo $row['email']; ?></p>
+
+                      </div>
                         
                     <div class="container-login100-form-btn m-t-32">
                       <button class="login100-form-btn btn-primary"  data-toggle="modal" data-target="#exampleModal<?php echo $row['codSalao'];?>" data-whatever="@getbootstrap">
-                        <a href="../cliente/Agendamento.php" style="color: white;">Agendamento</a>
+                        <a href="../cliente/Agendamento.php" style="color: white;">Agendar</a>
                     </button>
                   <!-- div modal-->
                     <div class="modal fade" id="exampleModal<?php echo $row['codSalao'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

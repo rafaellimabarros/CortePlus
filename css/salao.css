@@ -9,7 +9,7 @@
 
 }*/
 body{
-	background-image: url("../img/backpreto.jpg");
+	background-image: url("../img/salao.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
 	background-position: top;
@@ -19,7 +19,7 @@ body{
 	top: 10px;
 	text-align:center;
 	color: white;
-	margin:100px;	
+	
 
 }
 .index h1{
@@ -62,4 +62,11 @@ button a : hover{
 .index a:hover{
 	background: rgb(116, 216, 232);
 
+}
+
+.estiloCard{
+	width: 500px;
+	height: 500px;
+	margin:50px;
+	padding: 100px;
 }

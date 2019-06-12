@@ -9,7 +9,7 @@
 
 }*/
 body{
-	background-image: url("../img/backpreto.jpg");
+	background-image: url("../../img/agendamento.jpg");
 	background-repeat: no-repeat;
 	width: 100%;
 	background-position: top;
@@ -20,6 +20,7 @@ body{
 	text-align:center;
 	color: white;
 	margin:100px;	
+
 
 }
 .index h1{

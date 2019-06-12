@@ -18,6 +18,8 @@ $logado = $_SESSION['email'];
 
 <head>
 
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -74,7 +76,7 @@ $logado = $_SESSION['email'];
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Agendamentos</h1>
+          <h1 class="display-4 text-white mt-5 mb-2">Salão Plus</h1>
           <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
         </div>
       </div>
@@ -90,7 +92,7 @@ $logado = $_SESSION['email'];
          <table border="1">
                 <tr>
                   <td>Código</td>
-                  <td>salão</td>
+                  <td>usuário</td>
                   <td>horario</td>
                   <td>data</td>
                   <td>Ação</td>
@@ -99,9 +101,9 @@ $logado = $_SESSION['email'];
                 <?php 
                   $cliente = $pdo->query("SELECT * FROM cliente where email = '$logado'");
                   
-                  $dado = $pdo->query("SELECT codClienteAgendamento,nome,horaAgendamento,dataAgendamento , nomeSalao FROM clienteagendamento
+                  $dado = $pdo->query("SELECT * FROM clienteagendamento
                     INNER JOIN cliente on cliente.codCliente = clienteagendamento.codCliente
-                    INNER JOIN salao on salao.codSalao = clienteagendamento.codSalao where cliente.email = '$logado'") ;/*
+                    INNER JOIN salao on salao.codSalao = clienteagendamento.codSalao where salao.email = '$logado'") ;/*
                     INNER JOIN salao on codSalao = codSalao
                     INNER JOIN servico on codSalaoServico_fk = codServico
                     INNER JOIN funcionamento on codSalaoFuncionamento_fk = codSalaoFuncionamento_fk
@@ -110,7 +112,7 @@ $logado = $_SESSION['email'];
                   ?>
 
                 <tr>          
-                  <td><?php echo $row['codClienteAgendamento'];?></td>            <td><?php echo $row['nomeSalao'];?></td>
+                  <td><?php echo $row['codClienteAgendamento'];?></td>            <td><?php echo $row['nome'];?></td>
                   <td><?php echo $row['horaAgendamento']; ?></td>
                   <td><?php echo $row['dataAgendamento']; ?></td>
                   
