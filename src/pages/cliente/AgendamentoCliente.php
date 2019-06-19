@@ -102,10 +102,10 @@ $logado = $_SESSION['email'];
                     <div class="wrap-input100 validate-input" data-validate = "salao">
                       
                       <select name="codSalao" class="input100"
-                      disabled="true">
-                        
+                      required="true">
+                        <option>Selecione o salao...</option>
                             <?php 
-                            $dado = $pdo->query("SELECT DISTINCT * FROM salao where email = '$logado'") ;
+                            $dado = $pdo->query("SELECT DISTINCT * FROM salao ") ;
                               foreach ($dado as $row) { ?>
                             <option value="<?php echo $row['codSalao'] ?>"><?php echo $row['nomeSalao'] ?></option>
                             <?php } ?>
@@ -125,11 +125,7 @@ $logado = $_SESSION['email'];
                       required="true">
                         <option>Selecione o servico...</option>
                             <?php 
-                            $dado = $pdo->query("SELECT DISTINCT * FROM salaoservico 
-                              inner join servico on codServico = codServico_fk
-                              inner join salao on codSalao = codSalao_fk
-                              where email = '$logado'
-                              ") ;
+                            $dado = $pdo->query('SELECT DISTINCT * FROM servico') ;
                               foreach ($dado as $row) { ?>
                             <option value="<?php echo $row['codServico'] ?>"><?php echo $row['descricaoServico'] ?></option>
                             <?php } ?>

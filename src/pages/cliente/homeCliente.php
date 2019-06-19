@@ -104,7 +104,7 @@ $logado = $_SESSION['email'];
             <p class="card-text" align="justify">O salão de beleza L'Equipe oferece uma equipe formado por especialistas com o objetivo de proporcionar experiências inovadoras em cortes de cabelo, coloração e estética do corpo.</p>
           </div>
           <div class="card-footer">
-            <a href="../../pages/login.html" class="btn btn-primary"style="background-color: #00BFFF;">Agendar</a>
+            <a href="../../pages/salao/salao.php" class="btn btn-primary"style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@ $logado = $_SESSION['email'];
             <p class="card-text" align="justify"> Salão Beleza Oculta faz com que a ida ao salão se torne um momento prazeroso. Eles ostentam uma equipe de profissionais competentes, com os melhores cursos da área, para garantir aquele resultado incrível para você. </p>
           </div>
           <div class="card-footer">
-            <a href="../../pages/login.html" class="btn btn-primary"style="background-color: #00BFFF"; >Agendar</a>
+            <a href="../../pages/salao/salao.php" class="btn btn-primary"style="background-color: #00BFFF"; >Agendar</a>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ $logado = $_SESSION['email'];
             <p class="card-text" align="justify">Unhas maravilhosas, penteados divos, e cabelos musos. Na D'aque você encontra resultados incríveis para se inspirar para a próxima transformação.</p>
           </div>
           <div class="card-footer">
-            <a href="../../pages/login.html" class="btn btn-primary" style="background-color: #00BFFF;">Agendar</a>
+            <a href="../../pages/salao/salao.php" class="btn btn-primary" style="background-color: #00BFFF;">Agendar</a>
           </div>
         </div>
       </div>

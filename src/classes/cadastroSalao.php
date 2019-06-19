@@ -32,8 +32,25 @@ require ('conexao.php');
 			 $codPagamento = $_POST["codPagamento"];
 			 $email = $_POST['email'];
     		 $senha = $_POST['senha'];
-		
-			$sql = 'INSERT INTO salao(nomeResponsavel,cnpj,nomeSalao,cidade,bairro,logradouro,contato,codSalaoServico_fk,codSalaoFuncionamento_fk,codSalaoFormaPagamento_fk,senha,email)VALUES(:responsavel,:cnpj,:nomeSalao,:cidade,:bairro,:logradouro,:contato,:codServico,:codFuncionamento,:codPagamento,:senha,:email)';
+
+			 $imagem = $_FILES["imagem"]['name'];
+			 $UP['pasta'] = '../../fotoSalao/';
+			 $UP['tamanho'] = 1024 * 1024 * 100;
+			 $UP['extensoes'] = array('png','jpg','jpeg','gif');
+			 $UP['renomeia'] = false;
+
+			 if($imagem != null){
+			 		$extensoes = strtolower(end(explode('.', $_FILES['imagem']['name'])));
+			 		if(array_search($extensoes,$UP['extensoes'])===false){
+
+			 			echo "<META HHTTP-EQUIV=REFRESH CONTENT= '0;URL=http://localhost/SaloesPlus/src/pages/salao/cadastroSalao.php'>
+			 			<script>Imagem não foi cadastrada Extensão invalida!!!!</script>";
+			 		}else{
+
+			 				$nomeFinal = $_FILES['imagem']['name'];
+			 				if(move_uploaded_file($_FILES['imagem']['tmp_name'],$UP['pasta'].$nomeFinal)){
+
+							$sql = "INSERT INTO salao(nomeResponsavel,cnpj,nomeSalao,cidade,bairro,logradouro,contato,codSalaoServico_fk,codSalaoFuncionamento_fk,codSalaoFormaPagamento_fk,senha,email,imagem)VALUES(:responsavel,:cnpj,:nomeSalao,:cidade,:bairro,:logradouro,:contato,:codServico,:codFuncionamento,:codPagamento,:senha,:email,:nomeFinal)";
 
 			$stmt = $pdo->prepare($sql);
 
@@ -49,6 +66,7 @@ require ('conexao.php');
 			$stmt->bindValue(':codPagamento',$codPagamento);
 			$stmt->bindValue(':senha',$senha);
 			$stmt->bindValue(':email',$email);
+			$stmt->bindValue(':nomeFinal',$nomeFinal);
 			$stmt->execute();
 		
 		echo $stmt->rowCount();	
@@ -58,7 +76,13 @@ require ('conexao.php');
 		}else{
 			echo "<script>msgError()</script>";
 			
-		}
+		}	 		
+			 	
+			}
+			}
+			 }
+
+		
 		
 		
 	

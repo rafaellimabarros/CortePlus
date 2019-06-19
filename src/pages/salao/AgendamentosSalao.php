@@ -18,8 +18,6 @@ $logado = $_SESSION['email'];
 
 <head>
 
-
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -38,10 +36,14 @@ $logado = $_SESSION['email'];
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top" style=" font-size: 20px; background:black" >
     <div class="container">
-      <a class="navbar-brand" href="../../../index.php">Salões Plus</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">
+        <img src="../../../img/iconetesouraatt.png" alt="Salao" style="height: 80px; width: 80px;">
+      </a>
+          <a href="#"style="color: white; font-family: sans-serif;"> Salão Plus </a>
+    
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -52,19 +54,19 @@ $logado = $_SESSION['email'];
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../salao/salao.php">Salões</a>
+            <a class="nav-link" href="../salao/servico.php">Serviços</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="Agendamento.php">Agendamentos</a>
+            <a class="nav-link" href="AgendamentosSalao.php" style="color:white">Agendamentos</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li class="nav-item disabled">
+            <a class="nav-link " href="#" style="color: white">
              <?php 
                 echo "Bem Vindo $logado"
               ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../classes/sair.php">sair</a>
+            <a class="nav-link" href="../../classes/sair.php">Sair</a>
           </li>
         </ul>
       </div>
@@ -72,32 +74,30 @@ $logado = $_SESSION['email'];
   </nav>
 
   <!-- Header -->
-  <header class="bg-primary py-5 mb-5">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
+  <header class="bg-dange py-5 mb-5" >
+    <div class="container ">
+      
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Salão Plus</h1>
-          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
         </div>
-      </div>
+      
     </div>
   </header>
+
+  
 
   <!-- Page Content -->
   <div class="container">
     <h1>Agendamentos</h1>
-    <div class="row">
-
-      <div class="resultado">
-         <table border="1">
-                <tr>
-                  <td>Código</td>
-                  <td>usuário</td>
-                  <td>horario</td>
-                  <td>data</td>
-                  <td>Ação</td>
-
-                </tr>
+<table class="table col-lg-12">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome do Salão</th>
+      <th scope="col">Horário</th>
+      <th scope="col">Data</th>
+    </tr>
+  </thead>
+  <tbody>
                 <?php 
                   $cliente = $pdo->query("SELECT * FROM cliente where email = '$logado'");
                   
@@ -116,12 +116,13 @@ $logado = $_SESSION['email'];
                   <td><?php echo $row['horaAgendamento']; ?></td>
                   <td><?php echo $row['dataAgendamento']; ?></td>
                   
+                  <!--
                   <td>
                     <div class="container-login100-form-btn m-t-32">
                       <button class="login100-form-btn" data-toggle="modal" data-target="#exampleModal<?php echo $row['codClienteAgendamento'];?>" data-whatever="@getbootstrap">
                         Agendamento
                     </button>
-                  <!-- div modal-->
+                   div modal
                     <div class="modal fade" id="exampleModal<?php echo $row['codClienteAgendamento'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -166,7 +167,7 @@ $logado = $_SESSION['email'];
                         </div>
                       </div>
                     </div>
-                     <!-- /.div modal--> 
+                     /.div modal--> 
                     </div>
                   </td>
                 </tr>

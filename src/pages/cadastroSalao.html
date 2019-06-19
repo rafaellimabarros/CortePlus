@@ -60,39 +60,39 @@
 				<span class="login100-form-title p-b-41">
 					Cadastro Salão
 				</span>
-				<form class="login100-form validate-form p-b-33 p-t-5" action="../classes/cadastroSalao.php" method="post">
+				<form class="login100-form validate-form p-b-33 p-t-5" action="../classes/cadastroSalao.php" method="post"  enctype="multipart/form-data">
 					<div class="wrap-input100 validate-input" data-validate = "Nome do Salão">
-						<input class="input100" type="text" name="nomeSalao" placeholder="Nome do Salão">
+						<input class="input100" type="text" name="nomeSalao" placeholder="Nome do Salão" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Nome do Responsavel">
-						<input class="input100" type="text" name="responsavel" placeholder="Nome do Responsavel">
+						<input class="input100" type="text" name="responsavel" placeholder="Nome do Responsavel" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "CNPJ">
-						<input class="input100" type="tex	t" name="cnpj" placeholder="CNPJ">
+						<input class="input100" type="tex	t" name="cnpj" placeholder="CNPJ" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "logradouro">
-						<input class="input100" type="text" name="logradouro" placeholder="logradouro">
+						<input class="input100" type="text" name="logradouro" placeholder="logradouro" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "bairro">
-						<input class="input100" type="text" name="bairro" placeholder="bairro">
+						<input class="input100" type="text" name="bairro" placeholder="bairro" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "cidade">
-						<input class="input100" type="text" name="cidade" placeholder="cidade">
+						<input class="input100" type="text" name="cidade" placeholder="cidade" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "contato">
 						<input class="input100 form-control phone-ddd-mask" type="text" name="contato" 
-						placeholder="contato">
+						placeholder="contato" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "codServico">
-						 <select class="input100" type="" name="codServico" placeholder="codServico">
-		                  <option>Selecione...</option>
+						 <select class="input100" type="" name="codServico" placeholder="codServico" required="true">
+		                  <option>Selecione Serviço Principal ...</option>
 		                  <option value="1">Corte Masculino</option>
 		                  <option value="2">barba</option>
 						  <option value="3">Hidratação</option>
@@ -101,21 +101,34 @@
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "codFuncionamento">
-						<input class="input100" type="number" name="codFuncionamento" placeholder="codFuncionamento">
+						<select class="input100" type="number" name="codFuncionamento" placeholder="codFuncionamento" required="true">
+							<option value="">Horário de Funcionamento </option>
+		                  <option value="1">Das 8:00 as 17 horas</option>
+		                </select>
+						</select>
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "codPagamento">
-						<input class="input100" type="number" name="codPagamento" placeholder="codPagamento">
+						<select class="input100" type="number" name="codPagamento" placeholder="codPagamento" required="true">
+							<option value="">Forma de Pagamento</option>
+							<option value="1">Dinheiro</option>
+							<option value="2">Cartão de  Crédito</option>
+						</select>
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "email">
-						<input class="input100" type="email" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Email" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "senha">
-						<input class="input100" type="password" name="senha" placeholder="senha">
+						<input class="input100" type="password" name="senha" placeholder="senha" required="true">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
+					<div class="custom-file">
+						
+						  
+						  Selecione uma imagem: <input  type="file" id="imagem" name="imagem" />
+						</div>
 					<div class="container-login100-form-btn m-t-32">
 						<button class="login100-form-btn">
 							Cadastro

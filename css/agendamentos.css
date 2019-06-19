@@ -9,17 +9,17 @@
 
 }*/
 body{
-	background-image: url("../../img/agendamento.jpg");
+	
 	background-repeat: no-repeat;
-	width: 100%;
 	background-position: top;
+	width: 100%;
 }
 
 .index{
 	top: 10px;
 	text-align:center;
 	color: white;
-	margin:100px;	
+	
 
 
 }
@@ -50,12 +50,19 @@ nav a:hover{
 .somos{
 	color: black;
 }
-#Destaques{
-	margin-top: 300px;
-	margin-bottom: 400px;
+#Destaques{	
 	
 }
-
+footer{
+	margin-top: 500px;
+}
+.resultado{
+	background: red;
+	
+}
+.resultado p{
+	margin-left:550px; margin-bottom: 100px; margin-top: 500px;
+}
 button a : hover{
 	text-decoration: none;
 	color: white;

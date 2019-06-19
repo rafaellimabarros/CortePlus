@@ -13,13 +13,16 @@ body{
 	background-repeat: no-repeat;
 	width: 100%;
 	background-position: top;
+
+	
 }
 
 .index{
-	top: 10px;
+	top: 5px;
 	text-align:center;
 	color: white;
-	margin:100px;	
+	margin-top:50px;
+	padding-bottom: 10px;
 
 }
 .index h1{
@@ -27,10 +30,12 @@ body{
 	border-bottom: 3px solid white;
 	margin:30px;
 	}
+	
 .index p{
 	font-size: 20px;
 	margin:30px;
 	}
+
 .index a{
 	padding: 10px;
 	border: 3px solid white;
@@ -50,12 +55,12 @@ nav a:hover{
 	color: black;
 }
 #Destaques{
-	margin-top: 300px;
-	margin-bottom: 400px;
+	margin-top: 1px;
+	margin-bottom: 1px;
 	
 }
 
-button a : hover{
+button a hover{
 	text-decoration: none;
 	color: white;
 }
@@ -63,3 +68,17 @@ button a : hover{
 	background: rgb(116, 216, 232);
 
 }
+
+.parallax { 
+	/* The image used */
+	background-image: url("../img/cabeloazul.jpg");
+  
+	/* Set a specific height */
+	height: 700px; 
+  
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
